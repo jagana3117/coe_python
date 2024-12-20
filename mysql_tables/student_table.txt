@@ -1,0 +1,11 @@
+DATA BASE:cvr
+1.select *from student where city = 'Pune';
+2.select *from student where city = 'Pune' or city = 'Hyderabad';
+3.select * from student where gender='female' and city='hyderabad' union(select * from student where gender='male'and city='pune')union(select * from student where city='bangalore');
+4. select * from student where city='hyderabad'and gender='male'and marks>70 union(select * from student where gender='female' and city='hyderabad'and marks>50)union(select * from student where city='pune' and gender='male')union(select* from student where not city='bangalore');
+5.select * from student where city='bangalore' or city='hyderabad' and marks between 50 and 80;
+6.select * from student where sname like 's%' and sname like '%p';
+7.select city,count(sname) as student_count from student group by city;
+8. select city as best_city,avg(marks)as max_marks from student;
+9. select  city,max(marks) from student group by city;
+10.select * from student where marks=(select max(marks) from student where city='hyderabad');
